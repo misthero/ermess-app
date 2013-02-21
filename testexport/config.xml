@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "it.ermess.vasco"
+    version   = "2.2.0">
+
+	<name>Ermess Vasco</name>
+	
+	<description>
+	Applicazione partner ufficiale Vasco Rossi creata in concomitanza con il tour 2013 di Vasco in Italia per fornire un rapido accesso alle notizie sul tour e Prenotazione online di viaggio e pernottamento.
+	</description>
+	
+	<author href="http://made4media.it" email="info@made4media.it">
+		Luke
+	</author>
+	
+	
+	<preference name="permissions" value="none"/> <!-- tentativo per disabilitare la geolocation -->
+	
+	<preference name="phonegap-version" value="2.2.0" />
+	<preference name="orientation" value="default" />
+	<preference name="target-device" value="universal" />
+	<preference name="fullscreen" value="true" /> <!-- proviamo a metterlo true per evitare bande nere? -->
+	<preference name="detect-data-types" value="true" />
+	<preference name="prerendered-icon" value="true" /> <!-- rimuove riflesso sull'icona ios-->
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<preference name="splash-screen-duration" value="3000" />
+	<preference name="exit-on-suspend" value="true" />
+	
+	<feature name="http://api.phonegap.com/1.0/network"/>
+	
+	<access origin="*" />
+	
+	
+	<!-- icone IOS -->
+	<icon src="icons/ios/icon.png" gap:platform="ios" width="57" height="57" />
+	<icon src="icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="icons/ios/icon_at_2x.png" gap:platform="ios" width="114" height="114" />
+	<!-- splash IOS -->
+	<gap:splash src="splash/ios/Default.png" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="splash/ios/Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
+	<!-- <gap:splash src="splash/ios/Default_at_2x.png" gap:platform="ios" width="640" height="960" /> -->
+	<gap:splash src="splash/ios/Default-Landscape.png" gap:platform="ios" width="1024" height="748" />
+	<gap:splash src="splash/ios/Default-Portrait.png" gap:platform="ios" width="768" height="1004" />
+	
+	<!-- icone Android -->
+	<icon src="icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="icons/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+	<!-- splash Android -->
+	<gap:splash src="splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<gap:splash src="splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+	<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+
+</widget>

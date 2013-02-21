@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            Ermess Vasco
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="default"/>
+       <!-- <link href="files/resources/lib/theme/jqm/jqm.css" rel="stylesheet" /> -->
+        <link href="files/resources/lib/theme/ErmesVasco/ErmesVasco.css" rel="stylesheet"/>
+        <link href="files/resources/lib/jquerymobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" rel="stylesheet" />
+		
+		<script src="phonegap.js"></script>
+
+		<script type="text/javascript" src="files/resources/lib/theme/ErmesVasco/spinningwheel.js"></script>
+        <script type="text/javascript" src="files/resources/lib/store/json2.js"></script>
+        <script type="text/javascript" src="files/resources/lib/jquery/jquery-1.8.2.js"></script>
+        <script type="text/javascript" src="files/resources/lib/jquerymobile/jquery.mobile.iepatch.js"></script>
+        <script type="text/javascript">
+		
+			$(document).bind("mobileinit", function(){
+				/*if (navigator.userAgent.indexOf("Android") != -1)
+				{
+					$.mobile.defaultPageTransition = 'none';
+					$.mobile.defaultDialogTransition = 'none';
+				}*/
+				
+			});
+			
+			
+			// altra prova.. questa funziona
+			/*
+			$(function(){
+			  document.addEventListener("deviceReady", onDeviceReady, false);
+			})
+
+			function onDeviceReady() {
+			  navigator.geolocation.getCurrentPosition(onSuccess, onError); 		  
+			}
+
+			function onSuccess(position) {
+			  // your callback here 
+			  alert('geolocation success'+position)
+			}
+
+			function onError(error) { 
+			  // your callback here
+			  alert('geolocation failure'+error)
+			}	*/
+			
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquerymobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <script type="text/javascript" src="files/resources/lib/mobilebase.js"></script>
+        <script type="text/javascript" src="files/resources/lib/event/customEventHandler.js"></script>
+        <script type="text/javascript" src="files/resources/lib/base/sha1.js"></script>
+        <script type="text/javascript" src="files/resources/lib/base/oauth.js"></script>
+        <script type="text/javascript" src="files/resources/lib/base/contexts.js"></script>
+        <script type="text/javascript" src="files/resources/lib/base/jsonpath.js"></script>
+        <script type="text/javascript" src="files/resources/lib/base/jquery.xml2json.min.js"></script>
+        <script type="text/javascript" src="files/resources/lib/base/tiggzi.js"></script>
+        <link href="files/resources/css/mobilebase.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="files/views/assets/js/functions.js"></script>
+        <link href="index.css" rel="stylesheet" type="text/css" />
+		<link href="files/resources/lib/theme/ErmesVasco/spinningwheel.css" rel="stylesheet"/>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+			if (window.screen.height==568) { // iPhone 4" (4 pollici: iphone5)
+				document.querySelector("meta[name=viewport]").content="width=320.1";
+				$('body').addClass('ip4');
+			}
+		
+			if (navigator.userAgent.match(/iP/i)) {
+				$(window).bind('orientationchange', function(event){
+					$('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+				}).trigger('orientationchange');
+			}
+        </script>
+		
+		
+		<!-- index PAGE -->
+        <div data-role="page" style="" dsid="index" id="j_43" class="type-interior"
+        data-theme='' data-add-back-btn="false" data-back-btn-text="Back">
+            <div data-role="content" id="j_46" name="mobilecontainer1" class="mobileContent mobilecontainer3" dsid="mobilecontainer1" data-theme=''>
+				<div class="inner">
+					<div name="logo" dsid="logo" id="j_47" class="logo mobilepanel1">
+						<img src="files/resources/lib/theme/ErmesVasco/images/logobig.png" alt="Logo" />
+					</div>
+					<div data-role="controlgroup" name="Pulsantoni" id="j_48" dsid="Pulsantoni">
+						<a data-role="button" href="#registrapage" name="regbutt" dsid="regbutt" class='ui-btn pulsantone registra mobilebutton8'
+						id='j_49' data-corners='true' data-theme='' tabindex="5" reRender='Pulsantoni'>
+						Registrati
+						</a>
+						<a data-role="button" href="#contattopage" name="contactbutt" dsid="contactbutt" class='ui-btn pulsantone contact mobilebutton9'
+						id='j_50' data-corners='true' data-theme='' tabindex="6" reRender='Pulsantoni'>
+						Contact
+						</a>
+						<a data-role="button" name="prenotabutt" dsid="prenotabutt" class='ui-btn pulsantone prenota mobilebutton11'
+						id='j_52' data-corners='true' data-theme='' tabindex="8" reRender='Pulsantoni'>
+						Prenota
+						</a>
+						<a data-role="button" name="newsbutt" dsid="newsbutt" class='ui-btn pulsantone news mobilebutton10'
+						id='j_51' data-corners='true' data-theme='' tabindex="7" reRender='Pulsantoni'>
+						News
+						</a>
+					</div>
+					
+					<!-- pulsanti sposnsor e partners -->
+					
+					<div class="pulsantini">
+						<a data-position-to="window" href="#sponsorpop" data-rel="popup" data-transition="flow">Sponsors</a>
+						<a data-position-to="window" href="#partnerspop" data-rel="popup" data-transition="flow">Partners</a>
+					</div>
+					
+					<!-- popups -->
+					
+					<div class="whitepop" data-role="popup" id="sponsorpop">
+						<a href="#" class="smallclose ui-btn-right" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext">Close</a>
+						<a href="http://www.atahotels.it/it" target="_blank"><img src="files/views/assets/image/atahotels.png" width="150" alt="atahotel" /></a>
+						<a href="http://www.holidayinn.com/" target="_blank"><img src="files/views/assets/image/holiday.png" width="211" alt="holiday" /></a>
+					</div>
+					
+					<div class="whitepop" data-role="popup" id="partnerspop">
+						<a href="#" class="smallclose ui-btn-right" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext">Close</a>
+						<a href="http://www.majo.it/" target="_blank"><img src="files/views/assets/image/majo.png" width="150" alt="majo" /></a>
+						<a href="http://www.made4media.it" target="_blank"><img src="files/views/assets/image/m4m.png" width="150" alt="m4m" /></a>
+					</div>
+					
+				</div>
+			</div>
+        </div>
+		
+		
+		<!-- registrazione PAGE -->
+		
+		<div data-role="page" style="" dsid="registra" id="registrapage" class="type-interior" data-theme='a' data-add-back-btn="false" data-back-btn-text="Back">
+			<div data-role="content" id="registra-content" name="mobilecontainer" class="mobileContent mobilecontainer1" dsid="mobilecontainer" data-theme=''>
+				<div class="inner">
+					<div class="header">
+						<div class="logosmall"></div>
+						<div class="sidelogo"></div>
+					</div>
+					<div class="mobilegrid3_wrapper registerform">
+						<table id="j_53" class="mobilegrid mobilegrid3" dsid="registergrid" name="registergrid"
+						cellpadding=0 cellspacing=0>
+							<col style="width:401px;">
+								<tr class="mobilegrid3_row_0">
+									<td id="j_54" name="gridnamelab" class="mobilegridcell12" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div name="nomelabel" id="j_55" dsid="nomelabel" data-role="tiggr_label" class='labelClass mobilelabel9 '>
+												Nome e Cognome
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_1">
+									<td id="j_56" name="gridnameinp" class="mobilegridcell13" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div data-role="fieldcontain" class="mobiletextinput5">
+												<input type="text" name="name" dsid="name" id="j_57" value="" tabindex="10"
+												data-theme='' class='input mobiletextinput5 ' />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_2">
+									<td id="j_58" name="gridmaillab" class="mobilegridcell14" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div name="maillabel" id="j_59" dsid="maillabel" data-role="tiggr_label" class='labelClass mobilelabel10 '>
+												Email
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_3">
+									<td id="j_60" name="gridmailinp" class="mobilegridcell15" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div data-role="fieldcontain" class="mobiletextinput6">
+												<input type="text" name="regmail" dsid="regmail" id="j_61" value="" tabindex="11"
+												data-theme='' class='input mobiletextinput6 ' />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_4">
+									<td id="j_62" name="gridtellab" class="mobilegridcell16" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div name="tellabel" id="j_63" dsid="tellabel" data-role="tiggr_label" class='labelClass mobilelabel11 '>
+												Telefono
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_5">
+									<td id="j_64" name="gridtelinp" class="mobilegridcell17" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div data-role="fieldcontain" class="mobiletextinput7">
+												<input type="text" name="regtel" dsid="regtel" id="j_65" value="" tabindex="12"
+												data-theme='' class='input mobiletextinput7 ' />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_6">
+									<td id="j_66" name="gridteslab" class="mobilegridcell18" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div name="teslabel" id="j_67" dsid="teslabel" data-role="tiggr_label" class='labelClass mobilelabel12 '>
+												Se sei iscritto al fan club inserisci il tuo N° tessera:
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_7">
+									<td id="j_68" name="gridtesinp" class="mobilegridcell19" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div data-role="fieldcontain" class="mobiletextinput8">
+												<input type="text" name="regtes" dsid="regtes" id="j_69" value="" tabindex="13" data-theme='' class='input mobiletextinput8 ' />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_7">
+									<td class="mobilegridcell19" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div data-role="fieldcontain">
+												<fieldset data-role="controlgroup">
+													<legend>Accetta le <a data-position-to="window" href="#regprivpop" data-rel="popup" data-transition="flow">Condizioni sulla Privacy:</a></legend>
+													<input type="checkbox" name="regprivacy" id="checkbox-2" class="custom" />
+													<label for="checkbox-2">Accetto</label>
+												</fieldset>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="mobilegrid3_row_8">
+									<td id="j_70" name="gridregsend" class="mobilegridcell20" colspan=1 rowspan=1>
+										<div class="cell-wrapper">
+											<div class="mobilebutton12_wrapper smallbutt">
+												<a data-role="button" name="regsendbutt" id="regsendbutt" class=' button mobilebutton12' data-corners='true' data-mini='false' data-theme='' tabindex="9">
+												Ok
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+						</table>
+					</div>
+					<div data-role="popup" id="regprivpop">
+						<a href="#" class="smallclose ui-btn-right" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext">Close</a>
+						CONSENSO AI SENSI DEL D.Lgs. n. 196/03 I dati personali inviati saranno utilizzati da parte di Ermess nel pieno rispetto del Decreto legislativo n. 196 del 30 giugno 2003 (Nuovo codice della Privacy). La raccolta dei dati avviene secondo la modalità e nei limiti indicati dalla suddetta legge, per finalità di marketing e promozionali. I dati raccolti non verranno comunicati o diffusi a terzi. In base all'articolo 7 del D.Lgs. n. 196/03 (Diritti dell'interessato), in ogni momento Lei potrà avere accesso ai suoi dati chiedendone la modifica o la cancellazione oppure opporsi al loro utilizzo scrivendo all'indirizzo sopra riportato. Autorizzo a mantenere nella propria banca dati e ad inviarmi materiale informativo, pubblicitario o promozionale, inerente la propria attività e i prodotti commercializzati, nel rispetto della legge N. 675/96 del 31.12.1996 "Tutela della Privacy".
+					</div>
+					<div class="mobilebutton6_wrapper ">
+						<a data-role="button" name="backbutton" href="#j_43" class='mybackbutton button mobilebutton6' data-corners='true' data-mini='false' data-theme='' tabindex="10">
+							Back
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<!-- contact PAGE -->
+		
+		<div data-role="page" style="" dsid="Contatto" id="contattopage" class="type-interior" data-theme='a' data-add-back-btn="false" data-back-btn-text="Back">
+			<div data-role="content" id="contatto-content" name="mobilecontainer" class="mobileContent mobilecontainer1" dsid="mobilecontainer" data-theme=''>
+				<div class="inner">
+					<div class="header">
+						<div class="logosmall"></div>
+						<div class="sidelogo"></div>
+					</div>
+					<div name="contactpanel" dsid="contactpanel" id="j_72" class="contactpan mobilepanel2">
+						<div class="contact-text">
+							ERMESS Srl
+							<br/>
+							<br/>
+							Via Ramenghi 5B - 40133 Bologna
+							<br/>
+							<br/>
+							Contattaci tutti i giorni dal lunedì al venerdì, nell'orario 9-13 e 14-17.
+							<br/>
+							<br/>
+							tel/fax +39 051 435363
+							<br/>
+							<br/>
+							info@ermess.it
+							<br/>
+							<br/>
+						</div>
+					</div>
+					<div class="mobilebutton6_wrapper ">
+						<a data-role="button" name="backbutton" href="#j_43" class='mybackbutton button mobilebutton6' data-corners='true' data-mini='false' data-theme='' tabindex="10">
+                    Back
+                    </a>
+                </div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- page SCELTA TIPO DI VIAGGIO -->
+		
+		
+        <div data-role="page" style="" dsid="Prenota" id="j_0" class="type-interior prenota" data-theme='a' data-add-back-btn="false" data-back-btn-text="Back">
+            <div data-role="content" id="j_3" name="mobilecontainer" class="mobileContent mobilecontainer1" dsid="mobilecontainer" data-theme=''>
+			<div class="inner">
+				<div class="header">
+						<div class="logosmall"></div>
+						<div class="sidelogo"></div>
+				</div>
+				<div id="travel">
+					<div class="mobilebutton1_wrapper">
+						<a data-role="button" href="#prenotaForm" name="pulman" dsid="pulman" class='travelbutton pulman mobilebutton1' id='j_4' data-corners='true' data-mini='false' data-theme='' tabindex="1">
+						Pulman
+						</a>
+					</div>
+					<div class="mobilebutton2_wrapper ">
+						<a data-role="button" href="#prenotaForm" name="treno" dsid="treno" class=' travelbutton treno mobilebutton2'
+						id='j_5' data-corners='true' data-mini='false' data-theme='' tabindex="2">
+						Treno
+						</a>
+					</div>
+					<div class="mobilebutton3_wrapper ">
+						<a data-role="button" href="#prenotaForm" name="trenonotte" dsid="trenonotte" class=' travelbutton trenonotte mobilebutton3'
+						id='j_6' data-corners='true' data-mini='false' data-theme='' tabindex="3">
+						Treno notte
+						</a>
+					</div>
+					<div class="mobilebutton4_wrapper ">
+						<a data-role="button" href="#prenotaForm" name="aereo" dsid="aereo" class=' travelbutton aereo mobilebutton4'
+						id='j_7' data-corners='true' data-mini='false' data-theme='' tabindex="4">
+						Aereo
+						</a>
+					</div>
+					<div class="mobilebutton5_wrapper ">
+						<a data-role="button" href="#prenotaForm" name="aereonotte" dsid="aereonotte" class=' travelbutton aereonotte mobilebutton5'
+						id='j_8' data-corners='true' data-mini='false' data-theme='' tabindex="5">
+						Aereo Notte
+						</a>
+					</div>
+				</div>
+                
+				<div class="mobilebutton6_wrapper ">
+                    <a data-role="button" name="backbutton" href="#j_43" class='mybackbutton button mobilebutton6' data-corners='true' data-mini='false' data-theme='' tabindex="10">
+                    Back
+                    </a>
+                </div>
+				
+			</div>
+            </div> <!-- end content -->
+        </div>
+		
+		<!-- PRENOTA FORM PAGE -->
+		
+		<div data-role="page" style="" dsid="Prenotaform" id="prenotaForm" class="type-interior" data-theme='a' data-add-back-btn="false" data-back-btn-text="Back">
+            <div data-role="content" id="j_399" name="mobilecontainer" class="mobileContent mobilecontainer1" dsid="mobilecontainer" data-theme=''>
+			<div class="inner">
+				<div class="header">
+						<div class="logosmall"></div>
+						<div class="sidelogo travel"></div>
+				</div>
+		
+				<div class="mobilegrid1_wrapper">
+                    <table id="j_9" class="mobilegrid mobilegrid1" dsid="travelgrid" name="travelgrid"
+                    cellpadding=0 cellspacing=0>
+                        <col style="width:auto;">
+                            <tr class="mobilegrid1_row_0">
+                                <td id="j_10" name="mobilegridcell_8" class="mobilegridcell1" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="mobilelabel1_14" id="j_111" dsid="mobilelabel1_14" data-role="tiggr_label" class='labelClass mobilelabel1 '>
+                                            Nome e Cognome
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid1_row_1">
+                                <td id="j_12" name="mobilegridcell_10" class="mobilegridcell2" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div data-role="fieldcontain" class="mobiletextinput1">
+                                            <input type="text" name="travelname" dsid="mobiletextinput1_15" id="j_131" value="" tabindex="6" data-theme='' class='input mobiletextinput1 ' />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+							<tr class="">
+                                <td id="travelmail" name="" class="mobilegridcell1" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="mobilelabel1_14" id="j_112" data-role="tiggr_label" class='labelClass mobilelabel1 '>
+                                            Email: 
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td id="travelmail2" name="" class="mobilegridcell2" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div data-role="fieldcontain" class="mobiletextinput1">
+                                            <input type="text" name="travelmail" id="j_132" value="" tabindex="6" data-theme='' class='input mobiletextinput1 ' />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+							<tr class="">
+                                <td id="traveltel" name="" class="mobilegridcell1" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="" id="j_113" ds data-role="tiggr_label" class='labelClass mobilelabel1 '>
+                                            Telefono: 
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td id="traveltel2" name="" class="mobilegridcell2" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div data-role="fieldcontain" class="mobiletextinput1">
+                                            <input type="text" name="traveltel" ds  value="" tabindex="6" data-theme='' class='input mobiletextinput1 ' />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+							<tr class="">
+                                <td id="traveltess" name="" class="mobilegridcell1" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div data-role="tiggr_label" class='labelClass mobilelabel1 '>
+                                            Numero Tessera: 
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td id="traveltess2" name="" class="mobilegridcell2" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div data-role="fieldcontain" class="mobiletextinput1">
+                                            <input type="text" name="traveltess" ds  value="" tabindex="6" data-theme='' class='input mobiletextinput1 ' />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid1_row_2">
+                                <td id="j_14" name="mobilegridcell_12" class="mobilegridcell3" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="mobilelabel1_16" id="j_15" dsid="mobilelabel1_16" data-role="tiggr_label" class='labelClass mobilelabel2 '>
+                                            Citta di partenza
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid1_row_3">
+                                <td id="j_16" name="mobilegridcell_13" class="mobilegridcell4" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div data-role="fieldcontain" class="mobiletextinput2">
+                                            <input type="text" name="travelcity" dsid="mobiletextinput1_17" id="j_17" value="" tabindex="7" data-theme='' class='input mobiletextinput2 ' />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid1_row_4">
+                                <td id="j_18" name="mobilegridcell_18" class="mobilegridcell5" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="mobilelabel1_20" id="j_19" dsid="mobilelabel1_20" data-role="tiggr_label" class='labelClass mobilelabel3 '>
+                                            Concerto
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid1_row_5">
+                                <td id="j_20" name="mobilegridcell_19" class="mobilegridcell6" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div data-role="fieldcontain" class="mobileselectmenu1 concert">
+                                            <select name="travelconcert" id="j_21" dsid="selectconcer" data-theme='' data-inline='false' data-mini='false' data-icon='arrow-d' data-iconpos='right' data-native-menu="true" tabindex="8" class=' mobileselectmenu1 ' tiggzi-class="mobileselectmenu1">
+                                                <option value='Bologna' reRender='selectconcer' dsid='selectconcer-0' selected="selected">
+                                                    Bologna
+                                                </option>
+                                                <option value='Torino' reRender='selectconcer' dsid='selectconcer-1'>
+                                                    Torino
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid1_row_6">
+                                <td id="j_23" name="mobilegridcell_23" class="mobilegridcell7" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        
+                                        <div data-role="fieldcontain" class="mobiletoggle1">
+											<div name="pernottalabel" for="pernottatoggle" class='labelClass'>
+												Pernottamento
+											</div>
+                                            <select data-role="slider" name="pernottatoggle" id="pernottatoggle" dsid="" class='toggleClass mobiletoggle1 '>
+                                                <option value="on">
+                                                    Si
+                                                </option >
+                                                <option value="off" >
+                                                    No
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid1_row_7">
+                                <td id="j_26" name="mobilegridcell_27" class="mobilegridcell8" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="mobilelabel1_28" id="j_27" dsid="mobilelabel1_28" data-role="tiggr_label" class='labelClass mobilelabel5 '>
+                                            N. Notti
+                                        </div>
+                                        <div data-role="fieldcontain" class="mobiletextinput3">
+                                            <input type="text" name="numeronotti" dsid="numeronotti" id="j_28" value="0" tabindex="11" data-theme='' class='input mobiletextinput3 ' />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+							<tr class="">
+                                <td  name="" class="" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name=""  ds data-role="tiggr_label" class='labelClass '>
+                                           Data di Partenza (andata):
+                                        </div>
+                                        <div data-role="fieldcontain" class="">
+                                            <input type="text" name="startDate" ds id="startDate" value="" tabindex="12" data-theme='' class='input date' readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+							<tr class="">
+                                <td  name="" class="" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name=""  ds data-role="tiggr_label" class='labelClass '>
+                                           Data di Partenza (ritorno):
+                                        </div>
+                                        <div data-role="fieldcontain" class="">
+                                            <input type="text" name="endDate" ds id="endDate" value="" tabindex="12" data-theme='' class='input date' readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid1_row_8">
+                                <td id="j_29" name="mobilegridcell_30" class="mobilegridcell9" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="mobilelabel1_31" id="j_30" dsid="mobilelabel1_31" data-role="tiggr_label" class='labelClass mobilelabel6 '>
+                                            budget max
+                                        </div>
+                                        <div data-role="fieldcontain" class="mobiletextinput4">
+                                            <input type="text" name="travelbudget" dsid="mobiletextinput1_32" id="j_31" value="" tabindex="12" data-theme='' class='input mobiletextinput4 ' />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+							<tr class="mobilegrid1_row_8">
+                                <td id="" name="mobilegridcell_30" class="mobilegridcell9" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                    
+										<div data-role="fieldcontain">
+											<fieldset data-role="controlgroup">
+												<legend>Accetta le <a data-position-to="window" href="#prenprivpop" data-rel="popup" data-transition="flow">Condizioni sulla Privacy:</a></legend>
+												<input type="checkbox" name="travelprivacy" id="checkbox-1" class="custom" checked="checked"/>
+												<label for="checkbox-1">Accetto</label>
+											</fieldset>
+										</div>
+                                    </div>
+                                </td>
+                            </tr>
+							<tr>
+								<td>
+									<div class="smallbutt">
+										<a data-role="button" name="prenotasendbutt" dsid="regsendbutt" class=' button mobilebutton12' id='sendprenota' data-corners='true' data-mini='false' data-theme='' tabindex="9">
+										Ok
+										</a>
+									</div>
+								</td>
+							</tr>
+                    </table>
+                </div>
+				<div data-role="popup" id="prenprivpop">
+					<a href="#" class="smallclose ui-btn-right" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext">Close</a>
+					CONSENSO AI SENSI DEL D.Lgs. n. 196/03 I dati personali inviati saranno utilizzati da parte di Ermess nel pieno rispetto del Decreto legislativo n. 196 del 30 giugno 2003 (Nuovo codice della Privacy). La raccolta dei dati avviene secondo la modalità e nei limiti indicati dalla suddetta legge, per finalità di marketing e promozionali. I dati raccolti non verranno comunicati o diffusi a terzi. In base all'articolo 7 del D.Lgs. n. 196/03 (Diritti dell'interessato), in ogni momento Lei potrà avere accesso ai suoi dati chiedendone la modifica o la cancellazione oppure opporsi al loro utilizzo scrivendo all'indirizzo sopra riportato. Autorizzo a mantenere nella propria banca dati e ad inviarmi materiale informativo, pubblicitario o promozionale, inerente la propria attività e i prodotti commercializzati, nel rispetto della legge N. 675/96 del 31.12.1996 "Tutela della Privacy".
+				</div>
+				<div class="mobilebutton6_wrapper ">
+                    <a data-role="button" name="backbutton" href="#j_0" class='mybackbutton button mobilebutton6' data-corners='true' data-mini='false' data-theme='' tabindex="10">
+                    Back
+                    </a>
+                </div>
+			</div>
+			</div>
+		</div>				
+		
+		
+		<!-- page NEWS -->
+		
+		
+        <div data-role="page" style="" dsid="News" id="j_35" class="type-interior" data-theme='a' data-add-back-btn="false" data-back-btn-text="Back">
+            <div data-role="content" id="j_32" name="mobilecontainer" class="mobileContent mobilecontainer2" dsid="mobilecontainer" data-theme=''>
+			<div class="inner">
+				<div class="header">
+					<div class="logosmall"></div>
+					<div class="sidelogo"></div>
+				</div>
+                <div class="mobilegrid2_wrapper">
+                    <table id="j_36" class="mobilegrid mobilegrid2" dsid="mobilegrid_2" name="mobilegrid_2"
+                    cellpadding=0 cellspacing=0>
+                        <col style="width:auto;">
+                            <tr class="mobilegrid2_row_0">
+                                <td id="j_37" name="mobilegridcell_3" class="mobilegridcell10 title" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="mobilelabel1_7" id="j_38" dsid="mobilelabel1_7" data-role="tiggr_label" class='labelClass mobilelabel7 '>
+                                            Title
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="mobilegrid2_row_1">
+                                <td id="j_39" name="mobilegridcell_5" class="mobilegridcell11 description" colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <div name="mobilelabel1_8" id="j_40" dsid="mobilelabel1_8" data-role="tiggr_label" class='labelClass mobilelabel8 '>
+                                            Description
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                <div class="mobilebutton6_wrapper ">
+                    <a data-role="button" name="backbutton" href="#j_43" class='mybackbutton button mobilebutton6' data-corners='true' data-mini='false' data-theme='' tabindex="10">
+                    Back
+                    </a>
+                </div>
+			</div>
+            </div><!-- end content -->
+        </div>
+		<div id="popup" data-role="popup" data-transition="flip"  class="popupalerts">
+			
+			<a href="#" class="smallclose ui-btn-right" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" >Close</a>
+		</div>
+		
+    </body>
+
+</html>
